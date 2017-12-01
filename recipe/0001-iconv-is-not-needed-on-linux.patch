@@ -1,0 +1,13 @@
+diff -urN work.old/setup.py work/setup.py
+--- work.old/setup.py	2017-12-01 14:24:51.654076491 +0000
++++ work/setup.py	2017-12-01 14:25:47.412223203 +0000
+@@ -276,7 +276,8 @@
+   if HAS_GDAL > 0:
+     LIBRARIES.append('gdal')
+     LIBRARIES.append('proj') 
+-    LIBRARIES.append('iconv') 
++    if not sys.platform.startswith('linux'):
++        LIBRARIES.append('iconv') 
+     LIBRARIES.append('jasper')   # png is needed again, b/c it 
+     LIBRARIES.append('jpeg')   # png is needed again, b/c it 
+     LIBRARIES.append('png')      # must come after jasper

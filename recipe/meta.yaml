@@ -9,6 +9,7 @@ source:
   sha256: e2bae6469541662835a7d13aa0185b73b13df56c2de6ce6f8e74cb17ba9a6143
   patches:
     - test_opendap2_url.patch
+    - 0001-iconv-is-not-needed-on-linux.patch
 
 build:
   number: 1
