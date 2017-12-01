@@ -13,36 +13,27 @@ source:
 build:
   number: 1
   skip: True  # [win or py3k]
-  detect_binary_files_with_prefix: true
 
 requirements:
   build:
+    - {{ compiler('c') }}
+  host:
     - python
-    - gcc
-    - numpy 1.7.*  # [py27]
-    - libnetcdf 4.4.*
-    - proj4 4.9.3
-    - libgdal 2.2.*
-    - g2clib 1.6.*
+    - numpy
+    - libnetcdf
+    - proj4
+    - libgdal
+    - g2clib
     - hdfeos2
-    # - hdfeos5
+    # disabled because hdfeos5 has buffer overflow in tests right now.
+    #- hdfeos5
     - jasper
     - util-linux  # [linux]
     - libuuid  # [osx]
   run:
     - python
-    - numpy >=1.7  # [py27]
-    - libnetcdf 4.4.*
-    - hdf4
-    - proj4 4.9.3
-    - libgdal 2.2.*
-    - g2clib 1.6.*
-    - hdfeos2
-    # - hdfeos5
-    - jasper
-    - libgfortran
+    - {{ pin_compatible('numpy') }}
     - util-linux  # [linux]
-    - libuuid  # [osx]
 
 test:
   requires:
