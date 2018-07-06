@@ -33,6 +33,9 @@ requirements:
     - jasper
     - util-linux  # [linux]
     - libuuid  # [osx]
+    - hdf4
+    - hdf5
+    - libpng
   run:
     - python
     - {{ pin_compatible('numpy') }}
