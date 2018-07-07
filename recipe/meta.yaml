@@ -31,7 +31,6 @@ requirements:
     # disabled because hdfeos5 has buffer overflow in tests right now.
     #- hdfeos5
     - jasper
-    - util-linux  # [linux]
     - libuuid  # [osx]
     - hdf4
     - hdf5
@@ -39,7 +38,6 @@ requirements:
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - util-linux  # [linux]
 
 test:
   requires:
